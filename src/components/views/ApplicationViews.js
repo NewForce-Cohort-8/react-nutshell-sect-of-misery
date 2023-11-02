@@ -3,6 +3,7 @@ import { MessageForm } from "../messages/MessageForm"
 
 
 
+
 export const ApplicationViews = () => {
 	
     // const localHoneyUser = localStorage.getItem("honey_user")
@@ -10,6 +11,7 @@ export const ApplicationViews = () => {
    return <>
    <Message/> 
    <MessageForm/>
+  
    </> 
    
 }
