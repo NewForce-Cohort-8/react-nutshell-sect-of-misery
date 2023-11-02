@@ -1,12 +1,12 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./Login.css"
 
 export const Register = (props) => {
     const [customer, setCustomer] = useState({
         email: "",
-        fullName: "",
-        isStaff: false
+        username: "",
+        password: ""
     })
     let navigate = useNavigate()
 
@@ -53,14 +53,14 @@ export const Register = (props) => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main>
             <form className="form--login" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for Nutshell</h1>
                 <fieldset>
-                    <label htmlFor="fullName"> Full Name </label>
+                    <label htmlFor="username"> Username </label>
                     <input onChange={updateCustomer}
-                           type="text" id="fullName" className="form-control"
-                           placeholder="Enter your name" required autoFocus />
+                           type="text" id="username" className="form-control"
+                           placeholder="Enter your username" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
@@ -69,8 +69,17 @@ export const Register = (props) => {
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
+                    <label htmlFor="password"> Password </label>
+                    <input onChange={updateCustomer}
+                        type="password" id="password" className="form-control"
+                        placeholder="Password" required />
+                </fieldset>
+                <fieldset>
                     <button type="submit"> Register </button>
                 </fieldset>
+                <section className="link--login">
+                <Link to="/login">Already a member? Log in here</Link>
+            </section>
             </form>
         </main>
     )

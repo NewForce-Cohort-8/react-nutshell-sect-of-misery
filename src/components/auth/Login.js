@@ -17,7 +17,6 @@ export const Login = () => {
                     const user = foundUsers[0]
                     localStorage.setItem("honey_user", JSON.stringify({
                         id: user.id,
-                        staff: user.isStaff
                     }))
 
                     navigate("/")
@@ -33,7 +32,7 @@ export const Login = () => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Nutshell</h1>
-                    <h2>Please sign in</h2>
+                    <h5>Please sign in</h5>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"

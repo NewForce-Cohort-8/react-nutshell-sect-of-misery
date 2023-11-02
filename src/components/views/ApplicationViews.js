@@ -5,10 +5,10 @@ export const ApplicationViews = () => {
     
     if (honeyUserObject) {
 
-        return <div>Yeah buddy</div>
+        return <div>Application Views If</div>
 
     }
     else {
-        return <div>Noooo buddy</div>
+        return <div>Application Views Else</div>
     } 
 }
