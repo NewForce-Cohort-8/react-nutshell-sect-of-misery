@@ -1,0 +1,30 @@
+.form--login,
+.link--register {
+    text-align: center;
+}
+
+fieldset {
+    margin: 0 35rem;
+    padding: .75rem;
+    border-radius: 50px;;
+}
+
+.signIn,
+.register {
+    border: none;
+}
+
+.container--login {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+.container--login a {
+    color: white;
+}

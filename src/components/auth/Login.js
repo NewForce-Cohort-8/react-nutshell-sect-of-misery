@@ -31,7 +31,7 @@ export const Login = () => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Nutshell</h1>
+                <h1>Nutshell</h1>
                     <h5>Please sign in</h5>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
@@ -42,7 +42,7 @@ export const Login = () => {
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="signIn">
                         <button type="submit">
                             Sign in
                         </button>

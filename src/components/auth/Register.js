@@ -53,9 +53,9 @@ export const Register = (props) => {
     }
 
     return (
-        <main>
+        <main className="container--login">
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Nutshell</h1>
+                <h1>Please Register for Nutshell</h1>
                 <fieldset>
                     <label htmlFor="username"> Username </label>
                     <input onChange={updateCustomer}
@@ -74,7 +74,7 @@ export const Register = (props) => {
                         type="password" id="password" className="form-control"
                         placeholder="Password" required />
                 </fieldset>
-                <fieldset>
+                <fieldset className="register">
                     <button type="submit"> Register </button>
                 </fieldset>
                 <section className="link--login">
