@@ -44,21 +44,38 @@ export const TaskForm = () => {
         })
     }
     return (
+        // task description field
         <form className="taskForm">
-            <h2 className="taskForm__title">New Task</h2>
+            <h2 className="taskForm__title">New Task Entry</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">Description:</label>
+                    <label htmlFor="description">New Task:</label>
                     <input
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Brief description of problem"
+                        placeholder="To-do"
                         value={task.description}
                         onChange={
                             (evt) => {
                                const copy = {...task}
                                copy.description = evt.target.value
+                               update(copy)
+                            }
+                        } />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="expectedCompletionDate">Expected Completion Date:</label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="date"
+                        value={task.expectedCompletionDate}
+                        onChange={
+                            (evt) => {
+                               const copy = {...task}
+                               copy.expectedCompletionDate = evt.target.value
                                update(copy)
                             }
                         } />

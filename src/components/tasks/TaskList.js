@@ -1,3 +1,4 @@
+//
 import { useEffect, useState } from "react"
 import "./Tasks.css"
 import { useNavigate } from "react-router-dom"
@@ -12,11 +13,11 @@ export const TaskList = ({searchTermState}) => {
     const localHoneyUser = localStorage.getItem("honey_user")
     const honeyUserObject = JSON.parse(localHoneyUser)
    
-//function to filter the emergency only button to only display emergencies when clicked.
+//function to filter the completed button to only display incomplete tasks clicked.
     useEffect(
         () => {
             if (completed) {
-                const completedTasks = tasks.filter(task => task.completed === true)
+                const completedTasks = tasks.filter(task => task.completed !== true)
                 setFiltered(completedTasks)
             }
             else {
@@ -38,15 +39,16 @@ export const TaskList = ({searchTermState}) => {
 //if user is a customer it will only show their tasks, if they are staff it will show all tasks
 useEffect(
     () => {
-        if (honeyUserObject.staff) {
-            //for employees
-            setFiltered(tasks)
-        }
-        else {
+        // --This bit was to sort whether staff or not
+        // if (honeyUserObject.staff) {
+        //     //for employees
+        //     setFiltered(tasks)
+        // }
+        // else {
             //for customers
             const myTasks = tasks.filter(tasks => tasks.userId === honeyUserObject.id)
             setFiltered(myTasks)
-        }
+        // }
     },
     [tasks]
 )
@@ -85,7 +87,7 @@ return <>
             (task) => {
                 return <section className="task" key={`task--${task.id}`}>
                     <header>{task.description}</header>
-                    <footer>Completed: {task.completed ? "Yes" : "No"}</footer>
+                    <footer>Completed: {task.dateCompleted}</footer>
                 </section>
             }
         )
