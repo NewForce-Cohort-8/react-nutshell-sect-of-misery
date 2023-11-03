@@ -17,3 +17,23 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.synopsis {
+  font-size: 10px;
+}
+
+.article {
+  border: 1px white dotted;
+  border-radius: 20px;
+  padding: .75em;
+  margin: .5em 20em;
+  text-align: center;
+}
+
+.articles > h3 {
+  text-align: center;
+}
+
+.article:hover {
+  box-shadow: 5px 5px black;
+}
