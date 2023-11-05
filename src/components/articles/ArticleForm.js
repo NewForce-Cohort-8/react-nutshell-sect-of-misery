@@ -37,7 +37,7 @@ export const ArticleForm = ({ state, update }) => {
             url: article.url,
             synopsis: article.synopsis,
             tags: article.tags,
-            timestamp: article.timestamp,
+            timestamp: Date.now(),
             bullshit: article.bullshit
         }
 
