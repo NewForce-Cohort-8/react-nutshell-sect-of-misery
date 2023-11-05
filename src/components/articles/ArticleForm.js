@@ -26,6 +26,17 @@ export const ArticleForm = ({ state, update }) => {
     const localHoneyUser = localStorage.getItem("honey_user")
     const honeyUserObject = JSON.parse(localHoneyUser)
 
+    const getAllArticles = () => {
+        fetch('http://localhost:8088/articles/')
+        .then(response => response.json())
+        .then((articleArray) => {
+            articleArray.sort((a,b) => {
+                return b.timestamp - a.timestamp
+            })
+            setArticle(articleArray)
+        })
+    }
+
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
         // TODO: Create the object to be saved to the API
@@ -63,6 +74,9 @@ export const ArticleForm = ({ state, update }) => {
                 })
             })
             .then(navigate("/"))
+            .then(() => {
+                getAllArticles()
+            })
     }
 
     return (
