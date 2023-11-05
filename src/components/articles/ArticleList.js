@@ -24,6 +24,9 @@ export const ArticleList = () => {
         fetch('http://localhost:8088/articles/')
         .then(response => response.json())
         .then((articleArray) => {
+            articleArray.sort((a,b) => {
+                return b.timestamp - a.timestamp
+            })
             setArticles(articleArray)
         })
     }
