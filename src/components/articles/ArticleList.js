@@ -6,6 +6,17 @@ export const ArticleList = () => {
     const [articles, setArticles] = useState([])
     const navigate = useNavigate
 
+    const getAllArticles = () => {
+        fetch('http://localhost:8088/articles/')
+        .then(response => response.json())
+        .then((articleArray) => {
+            articleArray.sort((a,b) => {
+                return b.timestamp - a.timestamp
+            })
+            setArticles(articleArray)
+        })
+    }
+
     useEffect(
         () => {
             fetch(`http://localhost:8088/articles`)
@@ -20,19 +31,8 @@ export const ArticleList = () => {
         []
     )
 
-    const getAllArticles = () => {
-        fetch('http://localhost:8088/articles/')
-        .then(response => response.json())
-        .then((articleArray) => {
-            articleArray.sort((a,b) => {
-                return b.timestamp - a.timestamp
-            })
-            setArticles(articleArray)
-        })
-    }
-
     return (<>
-            <Link to={`/add-article`}><button>New Article</button></Link>
+            <Link to={`/articles/create`}><button>New Article</button></Link>
     <article className="articles">
         <h3>News Articles</h3>
             {

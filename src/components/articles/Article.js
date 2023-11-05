@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 export const Article = ({ id, title, synopsis, url, getAllArticles }) => {
     return <section className="article">
@@ -10,8 +11,11 @@ export const Article = ({ id, title, synopsis, url, getAllArticles }) => {
                 fetch(`http://localhost:8088/articles/${id}`, {
                     method: "DELETE"
                 })
-                .then(getAllArticles())
+                .then(() => {
+                    getAllArticles()
+                })
             }}
         >Delete</button>
+        <Link to={`/articles/${id}`}><button>Edit</button></Link>
     </section>
 }

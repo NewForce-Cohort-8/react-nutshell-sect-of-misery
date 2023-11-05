@@ -15,8 +15,6 @@ export const ArticleForm = ({ state, update }) => {
         tags: "",
         bullshit: false
     })
-
-    const [toggle, setToggle] = useState(false)
     /*
         TODO: Use the useNavigation() hook so you can redirect
         the user to the ticket list

@@ -7,6 +7,7 @@ import { NavBar } from './nav/NavBar';
 import { ArticleContainer } from './articles/ArticleContainer';
 import { ArticleList } from './articles/ArticleList';
 import { ArticleForm } from './articles/ArticleForm';
+import { ArticleEdit } from './articles/ArticleEdit';
 
 export const Nutshell = () => {
   return <Routes>
@@ -23,7 +24,8 @@ export const Nutshell = () => {
 
   } />
   <Route path="/articles" element={<ArticleList />} />
-  <Route path="/add-article" element={<ArticleForm />} />
+  <Route path="/articles/create" element={<ArticleForm />} />
+  <Route path="/articles/:articleId" element={<ArticleEdit />} />
 </Routes>
 }
 
