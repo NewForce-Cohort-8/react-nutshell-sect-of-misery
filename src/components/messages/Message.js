@@ -1,3 +1,3 @@
 export const Message = () => {
-    return <></>
+    return
 }
