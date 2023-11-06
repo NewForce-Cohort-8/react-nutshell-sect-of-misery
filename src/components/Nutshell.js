@@ -18,12 +18,11 @@ export const Nutshell = () => {
       <>
         <NavBar />
         <ApplicationViews />
-        <TaskForm/>
         <TaskList/>
       </>
     </Authorized>
-
-  } />
+} />
+    <Route path="/task/TaskForm" element={<TaskForm />} />
 </Routes>
 }
 

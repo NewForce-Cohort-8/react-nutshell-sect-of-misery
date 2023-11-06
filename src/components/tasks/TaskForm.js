@@ -27,7 +27,7 @@ export const TaskForm = () => {
             userId: honeyUserObject.id,
             description: task.description,
             completed: task.completed,
-            expectedCompletionDate: "",
+            expectedCompletionDate: task.expectedCompletionDate,
             dateCompleted: "",
         }
        // TODO: Perform the fetch() to POST the object to the API
@@ -40,7 +40,7 @@ export const TaskForm = () => {
         })
         .then(response => response.json())
         .then(() => {
-            navigate("/tasks")
+            navigate("/")
         })
     }
     return (
@@ -68,9 +68,9 @@ export const TaskForm = () => {
                     <label htmlFor="expectedCompletionDate">Expected Completion Date:</label>
                     <input
                         required autoFocus
-                        type="text"
+                        type="date"
                         className="form-control"
-                        placeholder="date"
+                        placeholder=""
                         value={task.expectedCompletionDate}
                         onChange={
                             (evt) => {
@@ -81,20 +81,7 @@ export const TaskForm = () => {
                         } />
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">completed:</label>
-                    <input type="checkbox"
-                        value={task.completed}
-                        onChange={
-                            (evt) => {
-                              const copy = {...task}
-                              copy.completed = evt.target.checked
-                              update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
+
             <button
             onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
             className="btn btn-primary">
