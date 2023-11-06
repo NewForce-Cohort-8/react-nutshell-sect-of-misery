@@ -5,6 +5,9 @@ import { Link, useNavigate } from "react-router-dom"
 export const ArticleList = () => {
     const [articles, setArticles] = useState([])
     const navigate = useNavigate
+    const localHoneyUser = localStorage.getItem("honey_user")
+    const honeyUserObject = JSON.parse(localHoneyUser)
+    const filteredArticles = articles.filter((article) => article.userId === honeyUserObject.id)
 
     const getAllArticles = () => {
         fetch('http://localhost:8088/articles/')
@@ -36,7 +39,7 @@ export const ArticleList = () => {
     <article className="articles">
         <h3>News Articles</h3>
             {
-                articles.map(article => <Article key={`article--${article.id}`} id={article.id} url={article.url} title={article.title} synopsis={article.synopsis} getAllArticles={getAllArticles} />  )
+                filteredArticles.map(article => <Article key={`article--${article.id}`} id={article.id} url={article.url} title={article.title} synopsis={article.synopsis} articleObject={article} getAllArticles={getAllArticles} />  )
             }
     </article>
     </>)
