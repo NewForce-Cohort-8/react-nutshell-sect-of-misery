@@ -4,9 +4,9 @@
 }
 
 fieldset {
-    margin: 0 35rem;
+    margin: 0 27em;
     padding: .75rem;
-    border-radius: 50px;;
+    border: none;
 }
 
 .signIn,

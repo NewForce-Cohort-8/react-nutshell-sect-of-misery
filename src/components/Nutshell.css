@@ -2,6 +2,10 @@
   text-align: left;
 }
 
+h2 {
+  text-align: center;
+}
+
 * {
   background-color: #2F575D;
   color: white;
@@ -40,4 +44,8 @@
 
 .btn {
   text-align: center;
+}
+
+.articleForm {
+  border: 1px dotted black;
 }

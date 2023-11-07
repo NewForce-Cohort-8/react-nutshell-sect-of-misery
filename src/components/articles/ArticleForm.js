@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { NavBar } from "../nav/NavBar"
 
 export const ArticleForm = ({ state, update }) => {
     /*
@@ -81,8 +82,10 @@ export const ArticleForm = ({ state, update }) => {
 
     return (
         <>
-            <form className="articleForm">
+            <NavBar />
+            <Link to={"/"} ><button>Back</button></Link>
             <h2 className="articleForm__title">New Article Form</h2>
+            <form className="articleForm">
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="url">URL:</label>
@@ -168,6 +171,7 @@ export const ArticleForm = ({ state, update }) => {
                         required />
                 </div>
             </fieldset>
+            <div className="btn">
             <button 
             className="btn btn-primary" 
             onClick={
@@ -177,6 +181,7 @@ export const ArticleForm = ({ state, update }) => {
             }>
                 Save Article
             </button>
+            </div>
         </form>
         </>
     )
