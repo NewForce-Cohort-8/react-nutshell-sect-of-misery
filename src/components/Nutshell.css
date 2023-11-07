@@ -1,5 +1,5 @@
 .Dashboard {
-  text-align: center;
+  text-align: left;
 }
 
 * {
@@ -36,4 +36,8 @@
 
 .article:hover {
   box-shadow: 5px 5px black;
+}
+
+.btn {
+  text-align: center;
 }

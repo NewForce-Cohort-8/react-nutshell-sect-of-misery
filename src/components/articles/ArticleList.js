@@ -35,7 +35,9 @@ export const ArticleList = () => {
     )
 
     return (<>
+            <div className="btn">
             <Link to={`/articles/create`}><button>New Article</button></Link>
+            </div>
     <article className="articles">
         <h3>News Articles</h3>
             {
