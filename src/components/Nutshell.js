@@ -7,6 +7,7 @@ import { NavBar } from './nav/NavBar';
 import { ApplicationViews } from './views/ApplicationViews';
 import { TaskForm } from './tasks/TaskForm';
 import { TaskList } from './tasks/TaskList';
+import { TaskEdit } from './tasks/TaskEdit';
 
 export const Nutshell = () => {
   return <Routes>
@@ -23,6 +24,8 @@ export const Nutshell = () => {
     </Authorized>
 } />
     <Route path="/task/TaskForm" element={<TaskForm />} />
+
+    <Route path="/task/:taskId" element={<TaskEdit />} />
 </Routes>
 }
 

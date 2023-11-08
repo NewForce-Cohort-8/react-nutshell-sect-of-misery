@@ -3,8 +3,8 @@
     flex-direction: column;
 }
 .task {
-    background-color: lightgray;
-    border: 1px dotted darkgray;
+    background-color: rgb(39, 110, 104);
+    border: 1px dotted rgb(45, 42, 42);
     padding: 0.9rem;
     margin: 0.5rem 0;
 }

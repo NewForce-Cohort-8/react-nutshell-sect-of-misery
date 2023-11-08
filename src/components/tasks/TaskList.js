@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react"
 import "./Tasks.css"
 import { useNavigate } from "react-router-dom"
+import { TaskEdit } from "./TaskEdit"
+import { getAllTasksFetch } from "../views/ApplicationViews"
 //state is managed at the component level. Data is fetched from the DOM when a customer submites a ticket then this function stores the state of the ticket and returns an array for the ApplicationViews variable so it can then publish to the webpage.
 export const TaskList = ({}) => {
     const [tasks, setTasks] = useState([])
@@ -12,30 +14,32 @@ export const TaskList = ({}) => {
 //get the honeyUser out of storage login
     const localHoneyUser = localStorage.getItem("honey_user")
     const honeyUserObject = JSON.parse(localHoneyUser)
-   
-    const completeButtonClick = (event) => {
-        event.preventDefault()
-        // TODO: Create the object to be saved to the API
-        const taskToSendToAPI = {
-            userId: honeyUserObject.id,
-            description: task.description,
-            completed: task.completed,
-            expectedCompletionDate: task.expectedCompletionDate,
-            dateCompleted: Date.now()
-        }
-       // TODO: Perform the fetch() to POST the object to the API
-        return fetch(`http://localhost:8088/tasks`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(taskToSendToAPI)
-        })
-        .then(response => response.json())
-        .then(() => {
-            navigate("/")
-        })
-    }
+   //////////////////////////////////////////////////////////////////////////////////////////
+    // const completeButtonClick = (event) => {
+    //     event.preventDefault()
+    //     // TODO: Create the object to be saved to the API
+    //     const taskToSendToAPI = {
+    //         userId: honeyUserObject.id,
+    //         description: task.description,
+    //         completed: task.completed,
+    //         expectedCompletionDate: task.expectedCompletionDate,
+    //         dateCompleted: Date.now()
+    //     }
+    //    // TODO: Perform the fetch() to POST the object to the API
+    //     return fetch(`http://localhost:8088/tasks`, {
+    //         method: "PATCH",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(taskToSendToAPI)
+    //     })
+    //     .then(response => response.json())
+    //     .then(() => {
+    //         navigate("/")
+    //     })
+    // }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
 //function to filter the completed button to only display incomplete tasks clicked.
 
     useEffect(
@@ -68,6 +72,7 @@ useEffect(
     },
     [tasks]
 )
+////////////////////not sure what this was for
     // useEffect(
     //     () => {
             
@@ -80,6 +85,8 @@ useEffect(
  
     //     [ openOnly ]
     // )
+
+
 //to remove unique key prop error similar to id attribute (uniquely identifies that componenet) React uses the unique keys to update the DOM. Add a key prop primary key of each object to build key property key={`task--${task.id}`}
 return <>
 {
@@ -102,18 +109,7 @@ return <>
                     <div>{task.expectedCompletionDate}</div>
                     <footer>Completed: {task.completed ? "Yes" : "No"}</footer>
 
-                    <div className="form-group">
-                    <label htmlFor="">complete button:</label>
-                    <input type="checkbox"
-                        value={task.completed}
-                        onChange={
-                            (evt) => {
-                              const copy = {...task}
-                              copy.completed = evt.target.checked
-                              console.log(copy)
-                            }
-                        } />
-                </div>
+                    { <button onClick={() => navigate(`/task/${task.id}`)}>Edit Task</button> }
                 </section>
             }
         )

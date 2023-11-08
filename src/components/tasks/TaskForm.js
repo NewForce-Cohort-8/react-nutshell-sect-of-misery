@@ -28,7 +28,7 @@ export const TaskForm = () => {
             description: task.description,
             completed: task.completed,
             expectedCompletionDate: task.expectedCompletionDate,
-            dateCompleted: "",
+            dateCompleted: ""
         }
        // TODO: Perform the fetch() to POST the object to the API
         return fetch(`http://localhost:8088/tasks`, {
@@ -64,6 +64,8 @@ export const TaskForm = () => {
                             }
                         } />
                 </div>
+
+                
                 <div className="form-group">
                     <label htmlFor="expectedCompletionDate">Expected Completion Date:</label>
                     <input
@@ -90,3 +92,4 @@ export const TaskForm = () => {
         </form>
     )
 }
+
