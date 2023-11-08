@@ -5,6 +5,9 @@ import { Register } from './auth/Register';
 import { Authorized } from './views/Authorized';
 import { NavBar } from './nav/NavBar';
 import { ApplicationViews } from './views/ApplicationViews';
+import { EventsForm } from './events/EventsForm';
+import { EventsList } from './events/EventsList';
+import { EventsEdit } from './events/EventsEdit';
 import { TaskForm } from './tasks/TaskForm';
 import { TaskList } from './tasks/TaskList';
 import { TaskEdit } from './tasks/TaskEdit';
@@ -23,13 +26,15 @@ export const Nutshell = () => {
       <>
         <NavBar />
         <ApplicationViews />
+        <EventsList />
         <TaskList/>
         <ArticleContainer />
       </>
     </Authorized>
 } />
     <Route path="/task/TaskForm" element={<TaskForm />} />
-
+<Route path="/events/create" element={<EventsForm />} />
+<Route path="/events/:eventId" element={<EventsEdit />} />
   
 
     <Route path="/task/:taskId" element={<TaskEdit />} />
