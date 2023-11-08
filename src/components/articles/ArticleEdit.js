@@ -57,9 +57,9 @@ export const ArticleEdit = () => {
     return (
         <>
         <NavBar />
-        <Link to={"/"} ><button>Back</button></Link>
+        <Link to={"/"} ><button className="btn btn-primary">Back</button></Link>
         <form className="articleEditForm">
-            <h2 className="articleForm__title">Edit Service Ticket</h2>
+            <h2 className="articleForm__title">Edit Article</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">URL:</label>
