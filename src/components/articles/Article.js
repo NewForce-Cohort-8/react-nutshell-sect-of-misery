@@ -9,6 +9,7 @@ export const Article = ({ id, title, synopsis, url, getAllArticles, articleObjec
         if (honeyUserObject.id === articleObject.userId) {
             return<>
              <button
+             className="btn btn-primary"
             onClick={() => {
                 fetch(`http://localhost:8088/articles/${id}`, {
                     method: "DELETE"
@@ -18,7 +19,7 @@ export const Article = ({ id, title, synopsis, url, getAllArticles, articleObjec
                 })
             }}
         >Delete</button>
-        <Link to={`/articles/${id}`}><div className="btn-edit"><button>Edit</button></div></Link>
+        <Link to={`/articles/${id}`}><div className="btn-edit"><button className="btn btn-primary">Edit</button></div></Link>
         </>
         } 
         else {
