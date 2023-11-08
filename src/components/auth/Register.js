@@ -59,23 +59,23 @@ export const Register = (props) => {
                 <fieldset>
                     <label htmlFor="username"> Username </label>
                     <input onChange={updateCustomer}
-                           type="text" id="username" className="form-control"
+                           type="text" id="username" className="form-control-md"
                            placeholder="Enter your username" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
                     <input onChange={updateCustomer}
-                        type="email" id="email" className="form-control"
-                        placeholder="Email address" required />
+                        type="email" id="email" className="form-control-md"
+                        placeholder="Enter your email address" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="password"> Password </label>
                     <input onChange={updateCustomer}
-                        type="password" id="password" className="form-control"
-                        placeholder="Password" required />
+                        type="password" id="password" className="form-control-md"
+                        placeholder="Enter your password" required />
                 </fieldset>
                 <fieldset className="register">
-                    <button type="submit"> Register </button>
+                    <button className="btn-primary btn"type="submit"> Register </button>
                 </fieldset>
                 <section className="link--login">
                 <Link to="/login">Already a member? Log in here</Link>
