@@ -1,4 +1,7 @@
-import { ArticleList } from "../articles/ArticleList"
+import { MessageForm } from "../messages/MessageForm"
+import { MessageList } from "../messages/MessageList"
+
+
 
 
 export const ApplicationViews = () => {
@@ -7,7 +10,13 @@ export const ApplicationViews = () => {
     const honeyUserObject = JSON.parse(localHoneyUser)
     // const localHoneyUser = localStorage.getItem("honey_user")
     // const honeyUserObject = JSON.parse(localHoneyUser)
-    return <>
-    </>
+   return <>
+  
+   <MessageForm/>
+   <MessageList/>
+  
+  
+   </> 
+   
 }
 
