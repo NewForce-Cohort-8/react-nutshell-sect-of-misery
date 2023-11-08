@@ -1,4 +1,4 @@
-
+import { EventView } from "./EventsViews"
 
 export const ApplicationViews = () => {
 	

@@ -1,0 +1,39 @@
+.events {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(221, 240, 79, 0.842);
+}
+
+.event {
+    background-color: rgba(69, 209, 164, 0.842);
+    border: 2px dotted rgba(9, 9, 9, 0.91);
+    border-radius: 1%;
+    padding: 0.7rem;
+    margin: 0.5rem;
+    color: black;
+}
+
+#image-container {
+    display: flex;
+    flex-direction: row;   
+    border: 1px dotted white;
+}
+
+#natural {
+    width: 30rem
+}
+
+body {
+   background: rgb(170,238,218);
+   background: radial-gradient(circle, rgba(170,238,218,1) 20%, rgba(206,249,130,1) 80%);
+   color: black;
+}
+
+h2 {
+    color: black;
+    margin-left: 2rem;
+}
+
+.events:first-child {
+    font-weight: bold;
+}
