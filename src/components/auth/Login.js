@@ -38,12 +38,12 @@ export const Login = () => {
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
-                            className="form-control"
+                            className="form-control-sm"
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
                     <fieldset className="signIn">
-                        <button type="submit">
+                        <button className="btn btn-primary" type="submit">
                             Sign in
                         </button>
                     </fieldset>
