@@ -18,7 +18,7 @@ export const Article = ({ id, title, synopsis, url, getAllArticles, articleObjec
                 })
             }}
         >Delete</button>
-        <Link to={`/articles/${id}`}><button>Edit</button></Link>
+        <Link to={`/articles/${id}`}><div className="btn-edit"><button>Edit</button></div></Link>
         </>
         } 
         else {
@@ -29,7 +29,7 @@ export const Article = ({ id, title, synopsis, url, getAllArticles, articleObjec
 
     return <section className="article">
         <div>
-            <a href={url} target="_blank"><h5>{title}</h5></a>
+            <a href={url} target="_blank" className=""><p>{title}</p></a>
         </div>
         <div className="synopsis">Synopsis: <em>{synopsis}</em></div>
         {buttonOrNoButton()}

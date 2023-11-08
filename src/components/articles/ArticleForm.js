@@ -83,7 +83,7 @@ export const ArticleForm = ({ state, update }) => {
     return (
         <>
             <NavBar />
-            <Link to={"/"} ><button>Back</button></Link>
+            <Link to={"/"} ><button className="btn-primary btn">Back</button></Link>
             <h2 className="articleForm__title">New Article Form</h2>
             <form className="articleForm">
             <fieldset>
@@ -171,7 +171,7 @@ export const ArticleForm = ({ state, update }) => {
                         required />
                 </div>
             </fieldset>
-            <div className="btn">
+            <div className="btn-center">
             <button 
             className="btn btn-primary" 
             onClick={

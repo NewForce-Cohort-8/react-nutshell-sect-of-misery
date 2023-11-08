@@ -35,10 +35,10 @@ export const ArticleList = () => {
     )
 
     return (<>
-            <div className="btn">
-            <Link to={`/articles/create`}><button>New Article</button></Link>
+            <div className="btn-center">
+            <Link to={`/articles/create`}><button className="btn btn-primary">New Article</button></Link>
             </div>
-    <article className="articles">
+    <article className="articles container-md">
         <h3>News Articles</h3>
             {
                 filteredArticles.map(article => <Article key={`article--${article.id}`} id={article.id} url={article.url} title={article.title} synopsis={article.synopsis} articleObject={article} getAllArticles={getAllArticles} />  )

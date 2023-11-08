@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
+import { NavBar } from "../nav/NavBar"
 
 export const ArticleEdit = () => {
     /*
@@ -54,6 +55,9 @@ export const ArticleEdit = () => {
     }
 
     return (
+        <>
+        <NavBar />
+        <Link to={"/"} ><button>Back</button></Link>
         <form className="articleEditForm">
             <h2 className="articleForm__title">Edit Service Ticket</h2>
             <fieldset>
@@ -121,9 +125,12 @@ export const ArticleEdit = () => {
                         } />
                 </div>
             </fieldset>
+            <div className="btn">
             <button className="btn btn-primary" onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}>
                 Save Edits
             </button>
+            </div>
         </form>
+        </>
     )
 }

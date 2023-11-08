@@ -6,6 +6,20 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background-color: rgb(93, 47, 63);
+  border: none;
+}
+
+.btn-primary:hover {
+  box-shadow: 1px 1px black;
+}
+
 * {
   background-color: #2F575D;
   color: white;
@@ -34,18 +48,35 @@ h2 {
   text-align: center;
 }
 
+div>a {
+  text-decoration: none;
+}
+
+div>a>p{
+   color: rgb(237, 120, 161);
+}
+
 .articles > h3 {
   text-align: center;
+}
+
+.article > button,
+.btn-edit > button {
+  font-size: .75rem;
+}
+
+.article > button {
+  margin-top: .7rem;
 }
 
 .article:hover {
   box-shadow: 5px 5px black;
 }
 
-.btn {
+.btn-center {
   text-align: center;
 }
 
-.articleForm {
+/*.articleForm {
   border: 1px dotted black;
-}
+}*/
