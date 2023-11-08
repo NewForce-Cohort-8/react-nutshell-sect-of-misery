@@ -1,8 +1,28 @@
 .Dashboard {
+  text-align: left;
+}
+
+h2 {
   text-align: center;
 }
 
-body {
+
+h3 {
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background-color: rgb(93, 47, 63);
+  border: none;
+  margin-top: .25rem
+}
+
+.btn-primary:hover {
+  box-shadow: 1px 1px black;
+}
+
+* {
   background-color: #2F575D;
   color: white;
 }
@@ -17,3 +37,48 @@ body {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.synopsis {
+  font-size: 10px;
+}
+
+.article {
+  border: 1px white dotted;
+  border-radius: 20px;
+  padding: .75em;
+  margin: .5em 20em;
+  text-align: center;
+}
+
+div>a {
+  text-decoration: none;
+}
+
+div>a>p{
+   color: rgb(237, 120, 161);
+}
+
+.articles > h3 {
+  text-align: center;
+}
+
+.article > button,
+.btn-edit > button {
+  font-size: .75rem;
+}
+
+.article > button {
+  margin-top: .7rem;
+}
+
+.article:hover {
+  box-shadow: 5px 5px black;
+}
+
+.btn-center {
+  text-align: center;
+}
+
+/*.articleForm {
+  border: 1px dotted black;
+}*/

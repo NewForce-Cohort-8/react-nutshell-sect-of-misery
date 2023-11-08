@@ -25,7 +25,7 @@ export const UserNav = () => {
                         <Link className="navbar__link" to="" onClick={() => {
                             localStorage.removeItem("honey_user")
                             navigate("/", {replace: true})
-                        }}><strong>Logout</strong></Link>
+                        }}><button className="btn btn-primary">Logout</button></Link>
                     </li>
                     : ""
             }

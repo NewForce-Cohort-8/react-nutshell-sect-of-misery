@@ -2,14 +2,11 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
-
 export const Login = () => {
-    const [email, set] = useState("colin@me.com")
+    const [email, set] = useState("me@me.com")
     const navigate = useNavigate()
-
     const handleLogin = (e) => {
         e.preventDefault()
-
         return fetch(`http://localhost:8088/users?email=${email}`)
             .then(res => res.json())
             .then(foundUsers => {
@@ -17,8 +14,8 @@ export const Login = () => {
                     const user = foundUsers[0]
                     localStorage.setItem("honey_user", JSON.stringify({
                         id: user.id,
+                        staff: user.isStaff
                     }))
-
                     navigate("/")
                 }
                 else {
@@ -26,24 +23,23 @@ export const Login = () => {
                 }
             })
     }
-
     return (
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                <h1>Nutshell</h1>
-                    <h5>Please sign in</h5>
+                    <h1>Honey Rae Repairs</h1>
+                    <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
-                            className="form-control-sm"
+                            className="form-control"
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
-                    <fieldset className="signIn">
-                        <button className="btn btn-primary" type="submit">
+                    <fieldset>
+                        <button type="submit">
                             Sign in
                         </button>
                     </fieldset>
@@ -55,4 +51,3 @@ export const Login = () => {
         </main>
     )
 }
-
