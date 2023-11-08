@@ -86,6 +86,28 @@ useEffect(
     //     [ openOnly ]
     // )
 
+    const getAllTasks = () => {
+        fetch(`http://localhost:8088/tasks`)
+        .then (response => response.json())
+        .then((taskArray) => {
+            const openTaskArray = taskArray.filter(task => {
+            return task.userId === honeyUserObject.id && task.completed === false
+        })
+            setTasks(openTaskArray)
+        })
+    }
+
+    const getTasksAndReplace = (singleTask) => { 
+        return fetch (`http://localhost:8088/tasks/${singleTask.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(singleTask)
+    })
+            .then(res => res.json())
+            .then(getAllTasks())
+    }
 
 //to remove unique key prop error similar to id attribute (uniquely identifies that componenet) React uses the unique keys to update the DOM. Add a key prop primary key of each object to build key property key={`task--${task.id}`}
 return <>
@@ -107,6 +129,19 @@ return <>
                     <header>{task.description}</header>
                     <div>{task.dateCompleted}</div>
                     <div>{task.expectedCompletionDate}</div>
+                    <div className="form-group">
+                    <label htmlFor="completed">Is it done? :</label>
+                    <input type="checkbox"
+                    onChange={
+                        (evt) => {
+                            // TODO: Update state with a modified copy
+                            const copy = {...task}
+                            copy.completed = evt.target.checked
+                            copy.dateCompleted = Date.now()
+                            getTasksAndReplace(copy)
+                        }
+                    } />
+            </div>
                     <footer>Completed: {task.completed ? "Yes" : "No"}</footer>
 
                     { <button onClick={() => navigate(`/task/${task.id}`)}>Edit Task</button> }
